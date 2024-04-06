@@ -1,6 +1,6 @@
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center  justify-between p-20 ">
+        <main className="flex min-h-screen  flex-col items-center justify-between p-20 ">
             <div className="
         relative flex before:absolute before:h-[300px] before:w-full sm:before:w-[480px]
         before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent

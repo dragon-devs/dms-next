@@ -5,7 +5,7 @@ import {appWindow} from "@tauri-apps/api/window";
 
 const WindowTitleBar = () => {
     return (
-        <div data-tauri-drag-region className="titlebar bg-white flex justify-end fixed top-0 left-0 right-0 p-2 user-select-none">
+        <div data-tauri-drag-region className="titlebar flex justify-end fixed top-0 left-0 right-0 p-2 user-select-none">
             <div onClick={() => appWindow.minimize()} className="titlebar-button hover:bg-slate-800 inline-flex justify-center items-center w-12 h-12">
                 <img src="https://api.iconify.design/mdi:window-minimize.svg" alt="minimize" />
             </div>
