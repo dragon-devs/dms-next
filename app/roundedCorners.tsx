@@ -5,7 +5,7 @@ interface RoundedCornersProps {
 }
 const RoundedCorners: React.FC<RoundedCornersProps> = ({children}) => {
     return (
-        <div className="bg-slate-950 relative -z-50 rounded-xl">
+        <div className="bg-slate-950 relative -z-50 rounded-xl p">
             {children}
         </div>
     );
