@@ -3,6 +3,7 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import WindowTitleBar from "@/app/windowTitleBar";
 import RoundedCorners from "@/app/roundedCorners";
+import {ThemeProvider} from "@/components/providers/ThemeProvider";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -22,7 +23,14 @@ export default function RootLayout({
             <WindowTitleBar />
             <body className={`${inter.className}`}>
                 <RoundedCorners>
-                    {children}
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="dark"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        {children}
+                    </ThemeProvider>
                 </RoundedCorners>
             </body>
         </html>
