@@ -40,8 +40,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
+      "identifier": "com.dragon.dev",
+      "longDescription": "Distribution management system.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",

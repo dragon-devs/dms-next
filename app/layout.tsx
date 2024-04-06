@@ -1,9 +1,11 @@
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
-import WindowTitleBar from "@/app/windowTitleBar";
 import RoundedCorners from "@/app/roundedCorners";
 import {ThemeProvider} from "@/components/providers/ThemeProvider";
+import WindowTitleBar from "@/app/windowTitleBar";
+import React from "react";
+// const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'), { ssr: false });
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -25,7 +27,7 @@ export default function RootLayout({
                 <RoundedCorners>
                     <ThemeProvider
                         attribute="class"
-                        defaultTheme="dark"
+                        defaultTheme="system"
                         enableSystem
                         disableTransitionOnChange
                     >
