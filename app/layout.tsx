@@ -3,9 +3,12 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import RoundedCorners from "@/app/roundedCorners";
 import {ThemeProvider} from "@/components/providers/ThemeProvider";
-import WindowTitleBar from "@/app/windowTitleBar";
+// import WindowTitleBar from "@/app/windowTitleBar";
 import React from "react";
-// const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'), { ssr: false });
+import dynamic from "next/dynamic";
+const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'),
+    { ssr: false, loading: loadingProps => <span>loading...</span>}
+);
 
 const inter = Inter({subsets: ["latin"]});
 

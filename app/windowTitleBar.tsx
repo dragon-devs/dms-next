@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {appWindow} from "@tauri-apps/api/window";
-import {ModeToggle} from "@/components/ModeToggle";
 
 const WindowTitleBar = () => {
     return (
@@ -19,7 +18,6 @@ const WindowTitleBar = () => {
     );
 };
 
-export const dynamic = 'force-dynamic';
 
 export default WindowTitleBar;
 
