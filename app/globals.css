@@ -71,6 +71,6 @@
       @apply border-border;
     }
     body {
-      @apply bg-transparent text-foreground fixed w-full h-full overflow-hidden;
+      @apply bg-transparent text-foreground fixed w-full h-full;
     }
   }

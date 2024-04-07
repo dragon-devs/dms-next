@@ -4,12 +4,11 @@ import "./globals.css";
 import RoundedCorners from "@/app/roundedCorners";
 import {ThemeProvider} from "@/components/providers/ThemeProvider";
 import React from "react";
-import dynamic from "next/dynamic";
-import {WindowTitleBarSkeleton} from "@/app/windowTitleBar";
+import WindowTitleBar from "@/app/windowTitleBar";
 
-const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'),
-    {ssr: false, loading: loadingProps => <WindowTitleBarSkeleton />}
-);
+// const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'),
+//     {ssr: false, loading: loadingProps => <WindowTitleBarSkeleton/>}
+// );
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -22,16 +21,18 @@ export default async function RootLayout({children}: Readonly<{ children: React.
     return (
         <html lang="en">
         <body className={`${inter.className}`}>
-        <WindowTitleBar/>
         <RoundedCorners>
-            <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-                disableTransitionOnChange
-            >
-                {children}
-            </ThemeProvider>
+        <WindowTitleBar/>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <div className="flex max-h-96 flex-col min-h-screen p-5">
+                        {children}
+                    </div>
+                </ThemeProvider>
         </RoundedCorners>
         </body>
         </html>

@@ -2,11 +2,13 @@ import {PrismaAdapter} from '@next-auth/prisma-adapter';
 import prisma from '@/prisma/client';
 import GoogleProvider from 'next-auth/providers/google';
 import {DefaultUser, NextAuthOptions} from 'next-auth';
+import {Role} from "@prisma/client";
 
 declare module 'next-auth' {
   interface Session {
     user?: DefaultUser & {
       oid: string;
+      role: Role
       isMember: boolean;
     };
   }
@@ -23,6 +25,7 @@ const authOptions: NextAuthOptions = {
         const user = await prisma.user.findUnique({where: {id: token.sub}});
         if (user && user.isMember) {
           session.user.isMember = user.isMember;
+          session.user.role = user.role;
         }
       }
       return session;

@@ -13,18 +13,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Distribution {
+  id        String   @id @default(cuid())
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User[]
+}
+
 model User {
-  id              String    @id @default(cuid())
+  id              String        @id @default(cuid())
   name            String?
-  email           String?   @unique
+  email           String?       @unique
   emailVerified   DateTime?
-  isMember        Boolean   @default(false)
+  isMember        Boolean       @default(false)
+  role            Role          @default(VIEWER)
   membershipStart DateTime?
   membershipEnd   DateTime?
   image           String?
   accounts        Account[]
   sessions        Session[]
-  createAt        DateTime  @default(now())
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  distribution    Distribution? @relation(fields: [distributionId], references: [id], onDelete: SetNull)
+  distributionId  String?       @unique
+}
+
+enum Role {
+  STAFF
+  VIEWER
+  MEMBER
+  ADMIN
+  OWNER
 }
 
 model Account {

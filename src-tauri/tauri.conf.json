@@ -7,7 +7,7 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "DMS Next",
+    "productName": "Distribution ERP",
     "version": "0.1.0"
   },
   "tauri": {
@@ -41,7 +41,7 @@
         "icons/icon.ico"
       ],
       "identifier": "com.dragon.dev",
-      "longDescription": "Distribution management system.",
+      "longDescription": "Distribution management system",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -66,11 +66,11 @@
     },
     "windows": [
       {
-        "alwaysOnTop": true,
+        "alwaysOnTop": false,
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "DMS NEXT",
+        "title": "Distribution ERP",
         "width": 800,
         "transparent": true,
         "decorations": false
