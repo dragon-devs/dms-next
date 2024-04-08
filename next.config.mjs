@@ -1,5 +1,5 @@
 const nextConfig = {
-    output: 'export', // Use 'export' for static site generation
+    output: 'export',
     swcMinify: true,
     logging: {
         fetches: {

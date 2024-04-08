@@ -5,6 +5,7 @@ import RoundedCorners from "@/app/roundedCorners";
 import {ThemeProvider} from "@/components/providers/ThemeProvider";
 import React from "react";
 import WindowTitleBar from "@/app/windowTitleBar";
+import {Toaster} from "@/components/ui/sonner";
 
 // const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'),
 //     {ssr: false, loading: loadingProps => <WindowTitleBarSkeleton/>}
@@ -32,6 +33,7 @@ export default async function RootLayout({children}: Readonly<{ children: React.
                     <div className="flex max-h-96 flex-col min-h-screen p-5">
                         {children}
                     </div>
+                    <Toaster />
                 </ThemeProvider>
         </RoundedCorners>
         </body>

@@ -1,8 +1,6 @@
-import NavBar from "@/app/NavBar";
 import {ModeToggle} from "@/components/ModeToggle";
 import React from "react";
 import prisma from "@/prisma/client";
-import LoginButton from "@/app/_components/LoginButton";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 
@@ -13,8 +11,11 @@ export default async function Home() {
     return (
         <main className="">
             <div className="flex justify-center gap-3 items-center h-screen">
-                <Link href="/users/login">
+                <Link href="/api/auth/signin">
                     <Button>Login</Button>
+                </Link>
+                <Link href="/users">
+                    <Button>Show users</Button>
                 </Link>
                 <ModeToggle/>
                 <h1 className="text-2xl font-bold">Home</h1>
@@ -33,3 +34,4 @@ export default async function Home() {
         </main>
     );
 }
+
