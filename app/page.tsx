@@ -3,6 +3,7 @@ import React from "react";
 import prisma from "@/prisma/client";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import UserPage from "@/app/users/page";
 
 export default async function Home() {
     const distribution = await prisma.distribution.findMany();
@@ -11,7 +12,7 @@ export default async function Home() {
     return (
         <main className="">
             <div className="flex justify-center gap-3 items-center h-screen">
-                <Link href="/api/auth/signin">
+                <Link href="/users/login">
                     <Button>Login</Button>
                 </Link>
                 <Link href="/users">
@@ -23,7 +24,7 @@ export default async function Home() {
                     {distribution!.map(m => <p key={m.id}>{m.name}</p>)}
                 </div>
                 <div>
-                    {users!.map(m => (
+                    {users && users!.map(m => (
                         <div key={m.id}>
                             <p>{m.name}</p>
                             <p className="text-muted-foreground text-xs">{m.distribution!.name}</p>

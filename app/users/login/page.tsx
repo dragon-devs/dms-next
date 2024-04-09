@@ -24,7 +24,7 @@ const LoginForm = () => {
                 }
             })
             setIsSubmitting(true);
-            toast.success("Logged in successfully.");
+            toast.success(`${user?.name}: Logged in successfully.`);
 
             router.push('/');
             router.refresh();
