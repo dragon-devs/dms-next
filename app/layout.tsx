@@ -6,6 +6,7 @@ import {ThemeProvider} from "@/components/providers/ThemeProvider";
 import React from "react";
 import WindowTitleBar from "@/app/windowTitleBar";
 import {Toaster} from "@/components/ui/sonner";
+import {Command} from "@tauri-apps/api/shell";
 
 // const WindowTitleBar = dynamic(() => import('@/app/windowTitleBar'),
 //     {ssr: false, loading: loadingProps => <WindowTitleBarSkeleton/>}

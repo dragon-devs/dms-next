@@ -18,6 +18,9 @@ export default async function Home() {
                 <Link href="/users">
                     <Button>Show users</Button>
                 </Link>
+                <Link href="/add">
+                    <Button>ADD</Button>
+                </Link>
                 <ModeToggle/>
                 <h1 className="text-2xl font-bold">Home</h1>
                 <div>
