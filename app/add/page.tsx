@@ -10,10 +10,10 @@ const Addition = () => {
         const fetchData = async () => {
             try {
                 const command = Command.sidecar('bin/server');
-                await command.execute(); // Start the server
+                await command.execute();
 
 
-                const response = await fetch('http://localhost:5661/add');
+                const response = await fetch('http://localhost:3000/add');
                 const jsonData = await response.json();
                 setData(jsonData);
             } catch (error) {

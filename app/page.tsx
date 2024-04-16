@@ -3,7 +3,7 @@ import React from "react";
 import prisma from "@/prisma/client";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
-import UserPage from "@/app/users/page";
+import {Command} from "@tauri-apps/api/shell";
 
 export default async function Home() {
     const distribution = await prisma.distribution.findMany();
@@ -12,7 +12,7 @@ export default async function Home() {
     return (
         <main className="">
             <div className="flex justify-center gap-3 items-center h-screen">
-                <Link href="/users/login">
+                <Link href="/api/auth/signin">
                     <Button>Login</Button>
                 </Link>
                 <Link href="/users">

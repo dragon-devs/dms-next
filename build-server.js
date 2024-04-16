@@ -41,11 +41,12 @@ var esbuild = require("esbuild");
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, esbuild.build({
-                    entryPoints: ['./server/server.ts'],
+                    entryPoints: ['./build/server.ts'],
                     bundle: true,
                     platform: 'node',
                     target: ['node18.0'],
-                    outfile: 'dist/server/server.js',
+                    // outfile: 'dist/server/server.js',
+                    outdir: 'build/dist',
                     plugins: [],
                 })];
             case 1:
